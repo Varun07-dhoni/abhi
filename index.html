@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9d8e2;
+            color: #d6336c;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-top: 20px;
+        }
+        input {
+            padding: 10px;
+            margin: 10px;
+            border: 2px solid #d6336c;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #d6336c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #b52a5a;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="questions">
+        <h1>🎉 Hey! 🎉</h1>
+        <p>let me ask something!</p>
+        <label for="name">What's your name?</label><br>
+        <input type="text" id="name" placeholder="Enter your name"><br>
+        <label for="age">How old are you turning today?</label><br>
+        <input type="number" id="age" placeholder="Enter your age"><br>
+        <label for="color">What's your favorite color?</label><br>
+        <input type="text" id="color" placeholder="Enter your favorite color"><br>
+        <button onclick="showBirthdayMessage()">Submit</button>
+    </div>
+
+    <div id="birthdayMessage" class="hidden">
+        <h1>🎂 Happy Birthday dear, <span id="displayName"></span>! 🎉</h1>
+        <p>Wow, you're turning <span id="displayAge"></span> today! That's amazing!</p>
+        <p>And your favorite color is <span id="displayColor"></span>? Great choice!</p>
+        <p>Wishing you a happy birthday filled with joy, laughter, and lots of cake! 🎈</p>
+        <p>And lots love to you </p>
+    
+        <p>Sending you lots of love! ❤️💕💞💓💗</p>
+    </div>
+
+    <script>
+        function showBirthdayMessage() {
+            // Get user inputs
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            const color = document.getElementById('color').value;
+
+            // Display the birthday message
+            document.getElementById('displayName').textContent = name;
+            document.getElementById('displayAge').textContent = age;
+            document.getElementById('displayColor').textContent = color;
+
+            // Hide the questions and show the birthday message
+            document.getElementById('questions').classList.add('hidden');
+            document.getElementById('birthdayMessage').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
